@@ -13,7 +13,7 @@ run() {
 check() {
     seed="$1"
    ./trivia "$seed" > data/"$seed".received
-    diff data/"$seed".approved data/"$seed".received
+    diff -q data/"$seed".approved data/"$seed".received
     echo -n "."
 }
 
