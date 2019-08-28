@@ -4,7 +4,7 @@
 
 static bool not_a_winner;
 
-int main()
+int main(int argc, char** argv)
 {
 	struct Game *a_game = game_new();
 
@@ -12,7 +12,12 @@ int main()
 	game_add(a_game, "Pat");
 	game_add(a_game, "Sue");
 
-	srand((unsigned)time(0));
+	unsigned int seed = (unsigned) time(0);
+	if (argc > 1)
+	{
+		seed = atoi(argv[1]);
+	}
+	srand(seed);
 
 	do
 	{
