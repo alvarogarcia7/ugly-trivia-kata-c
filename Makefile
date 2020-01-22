@@ -7,3 +7,7 @@ compile:
 .PHONY: test-golden-master
 test-golden-master:
 	./golden-master.sh
+
+.PHONY: measure
+measure:
+	./measurement.sh
